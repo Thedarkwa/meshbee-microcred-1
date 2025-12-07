@@ -71,7 +71,7 @@ const Hero = () => {
 
           {/* Trust Indicator */}
           <p className="mt-8 text-sm text-card/60">
-            🏦 Licensed by the Bank of Ghana • 📍 Located at Teshie Fertilizer Road, Accra
+             Licensed by the Bank of Ghana •  Located at Teshie Fertilizer Road, Accra
           </p>
         </div>
       </div>
