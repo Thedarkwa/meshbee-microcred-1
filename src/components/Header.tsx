@@ -47,8 +47,8 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">Call Us</span>
             </a>
-            <Button variant="default" size="default">
-              Apply Now
+            <Button variant="default" size="default" asChild>
+              <a href="#contact">Apply Now</a>
             </Button>
           </div>
 
@@ -76,8 +76,8 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="default" className="w-full mt-2">
-                Apply Now
+              <Button variant="default" className="w-full mt-2" asChild>
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Apply Now</a>
               </Button>
             </div>
           </nav>
