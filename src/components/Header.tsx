@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import meshbeeLogo from "@/assets/meshbee-logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,14 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">M</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-lg font-bold text-foreground">Meshbee</span>
-              <span className="text-sm text-muted-foreground block -mt-1">MicroCredit</span>
-            </div>
+          <a href="#home" className="flex items-center">
+            <img 
+              src={meshbeeLogo} 
+              alt="Meshbee Micro Credit Logo" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}
