@@ -13,7 +13,7 @@ const Footer = () => {
 
   const loanProducts = [
     "Market Women Loans",
-    "Taxi Driver Loans",
+    "Commercial Driver Loans",
     "SME Business Loans",
     "Group Lending",
   ];
@@ -85,7 +85,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-card/70 text-sm">+233 XX XXX XXXX</span>
+                <span className="text-card/70 text-sm">+233 50 660 5717</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
