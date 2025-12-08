@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import WhyUs from "@/components/WhyUs";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const WhyUsPage = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      <Hero />
+      <div className="pt-16 md:pt-20">
+        <WhyUs />
+      </div>
       <Footer />
     </main>
   );
 };
 
-export default Index;
+export default WhyUsPage;

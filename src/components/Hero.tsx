@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-business.jpg";
@@ -54,10 +55,10 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="hero" size="xl" asChild>
-              <a href="#contact">
+              <Link to="/contact">
                 Apply for a Loan
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
             </Button>
             <Button 
               variant="heroOutline" 
@@ -65,7 +66,7 @@ const Hero = () => {
               className="border-card/50 text-card hover:bg-card hover:text-foreground"
               asChild
             >
-              <a href="#about">Learn More</a>
+              <Link to="/about">Learn More</Link>
             </Button>
           </div>
 
