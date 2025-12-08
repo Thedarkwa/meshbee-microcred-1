@@ -30,23 +30,21 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               
               <p className="text-muted-foreground leading-relaxed mb-4">
-                To empower hardworking Ghanaians – from market women to taxi drivers and small business owners – 
-                with accessible, affordable, and timely financial support that enables them to grow their 
-                businesses and improve their livelihoods.
+                To improve the living standards of our clients through professional microcredit services and technology
               </p>
               
               <ul className="space-y-2">
                 <li className="flex items-start gap-2 text-foreground/80">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Provide quick, hassle-free loans to underserved communities</span>
+                  <span>Provide tailor-made business solutions backed by professional expertise</span>
                 </li>
                 <li className="flex items-start gap-2 text-foreground/80">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Offer fair and transparent lending practices</span>
+                  <span>Offer accessible, flexible and well-structured credit facilities</span>
                 </li>
                 <li className="flex items-start gap-2 text-foreground/80">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Build lasting relationships based on trust and respect</span>
+                  <span>Deliver excellent customer service at every point at contact</span>
                 </li>
               </ul>
             </div>
@@ -65,8 +63,7 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               
               <p className="text-muted-foreground leading-relaxed mb-4">
-                To become Ghana's most trusted microfinance partner, recognized for transforming lives 
-                and communities through inclusive financial services that leave no entrepreneur behind.
+                To become the most reliable and trusted brand for financial solutions withing the informal sector
               </p>
               
               <ul className="space-y-2">
