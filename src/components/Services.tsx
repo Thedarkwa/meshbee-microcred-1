@@ -11,7 +11,7 @@ const Services = () => {
     },
     {
       icon: Car,
-      title: "Taxi Driver Loans",
+      title: "Commercial Driver Loans",
       description: "Keep your taxi running smoothly with quick loans for repairs, fuel, or vehicle upgrades. Same-day approval available.",
       features: ["GHS 1,000 - 15,000", "Flexible terms", "Quick disbursement"],
     },
