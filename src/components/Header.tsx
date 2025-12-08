@@ -9,22 +9,25 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Mission & Vision", href: "/mission-vision" },
-    { name: "Services", href: "/services" },
-    { name: "Why Us", href: "/why-us" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Mission & Vision", href: "/#mission-vision" },
+    { name: "Services", href: "/#services" },
+    { name: "Why Us", href: "/#why-us" },
+    { name: "Contact", href: "/#contact" },
   ];
 
-  const isActive = (href: string) => location.pathname === href;
+  const isActive = (href: string) => {
+    const hash = location.hash || "#home";
+    return href.endsWith(hash);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/#home" className="flex items-center">
             <img 
               src={meshbeeLogo} 
               alt="Meshbee Micro Credit Logo" 
@@ -56,7 +59,7 @@ const Header = () => {
               <span className="text-sm font-medium">Call Us</span>
             </a>
             <Button variant="default" size="default" asChild>
-              <Link to="/contact">Apply Now</Link>
+              <Link to="/#contact">Apply Now</Link>
             </Button>
           </div>
 
@@ -89,7 +92,7 @@ const Header = () => {
                 </Link>
               ))}
               <Button variant="default" className="w-full mt-2" asChild>
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
+                <Link to="/#contact" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
               </Button>
             </div>
           </nav>
