@@ -49,7 +49,7 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-primary">5K+</p>
+                <p className="text-3xl md:text-4xl font-bold text-primary">200+</p>
                 <p className="text-sm text-muted-foreground">Happy Clients</p>
               </div>
               <div className="text-center">
