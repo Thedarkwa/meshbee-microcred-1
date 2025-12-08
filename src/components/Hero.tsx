@@ -27,7 +27,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-primary-foreground/90">Trusted by 5,000+ Businesses in Ghana</span>
+            <span className="text-sm font-medium text-primary-foreground/90">Trusted by 1,000+ Businesses in Ghana</span>
           </div>
 
           {/* Headline */}
@@ -38,7 +38,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-card/80 mb-8 leading-relaxed max-w-xl">
-            Get quick, affordable loans tailored for market women, taxi drivers, and SMEs. 
+            Get quick, affordable loans tailored for market women, commercial drivers, and SMEs. 
             We believe in your hustle and are here to support your growth.
           </p>
 
