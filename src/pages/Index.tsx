@@ -46,7 +46,9 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Header />
-      {renderSection()}
+      <div key={activeSection} className="animate-fade-in">
+        {renderSection()}
+      </div>
       <Footer />
     </main>
   );
