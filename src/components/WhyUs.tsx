@@ -1,4 +1,4 @@
-import { Clock, Shield, Smile, Percent, FileCheck, Headphones } from "lucide-react";
+import { Clock, Shield, Smile, Percent, FileCheck, Headphones, SearchCheck } from "lucide-react";
 
 const WhyUs = () => {
   const benefits = [
@@ -26,6 +26,11 @@ const WhyUs = () => {
       icon: FileCheck,
       title: "Simple Process",
       description: "Minimal documentation required. Just bring your ID, business details, and walk out with cash.",
+    },
+    {
+      icon: SearchCheck,
+      title: "Thorough Due Diligence",
+      description: "We carefully assess every application to ensure responsible lending and protect both you and your business.",
     },
     {
       icon: Headphones,
