@@ -72,6 +72,38 @@ const Services = () => {
             </Card>
           ))}
         </div>
+
+        {/* Loan Features Section */}
+        <div className="mt-20">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+              Loan Features
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Discover the benefits that make our loans stand out from the rest.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Quick Disbursement", description: "Get your funds within 24-48 hours of approval" },
+              { title: "Flexible Repayment", description: "Daily, weekly, or monthly repayment options to suit your cash flow" },
+              { title: "No Hidden Fees", description: "Transparent pricing with no surprise charges" },
+              { title: "Low Interest Rates", description: "Competitive rates designed for small business success" },
+              { title: "No Collateral Required", description: "Access funds without putting up assets as security" },
+              { title: "Easy Application", description: "Simple paperwork and straightforward requirements" },
+            ].map((feature, index) => (
+              <div 
+                key={index}
+                className="bg-card border border-border/50 rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
