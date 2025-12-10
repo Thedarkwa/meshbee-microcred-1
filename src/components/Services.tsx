@@ -87,12 +87,12 @@ const Services = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Quick Disbursement", description: "Get your funds within 24-48 hours of approval" },
-              { title: "Flexible Repayment", description: "Daily, weekly, or monthly repayment options to suit your cash flow" },
-              { title: "No Hidden Fees", description: "Transparent pricing with no surprise charges" },
-              { title: "Low Interest Rates", description: "Competitive rates designed for small business success" },
-              { title: "No Collateral Required", description: "Access funds without putting up assets as security" },
-              { title: "Easy Application", description: "Simple paperwork and straightforward requirements" },
+              { title: "Loan Amount", description: "GHC 1,000.00-GHC 20,000" },
+              { title: "Interest Rate", description: "7% for Weekly and 10% Monthly" },
+              { title: "Processing Fee", description: "5% of approved amount <br>Application fees: GHC 50.00</br>" },
+              { title: "Repayment Options", description: "Daily, Weekly, Bi-Weekly and Monthly" },
+              { title: "Duration", description: "1-6 months" },
+              { title: "Collateral", description: "Based on Risk profile and Loans amount" },
             ].map((feature, index) => (
               <div 
                 key={index}
