@@ -29,24 +29,9 @@ const MissionVision = () => {
               
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                To improve the living standards of our clients through professional microcredit services and technology
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                To improve the living standards of our clients through professional microcredit services and technology.
               </p>
-              
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Provide tailor-made business solutions backed by professional expertise</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Offer accessible, flexible and well-structured credit facilities</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 shrink-0" />
-                  <span>Deliver excellent customer service at every point at contact</span>
-                </li>
-              </ul>
             </div>
           </div>
 
@@ -62,24 +47,9 @@ const MissionVision = () => {
               
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                To become the most reliable and trusted brand for financial solutions withing the informal sector
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                To become the most reliable and trusted brand for financial solutions within the informal sector.
               </p>
-              
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 shrink-0" />
-                  <span>A Ghana where every small business has access to capital</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 shrink-0" />
-                  <span>Financial inclusion for all, regardless of background</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground/80">
-                  <span className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 shrink-0" />
-                  <span>Thriving communities built on economic empowerment</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
