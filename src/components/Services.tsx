@@ -7,23 +7,25 @@ const Services = () => {
       icon: ShoppingBag,
       title: "Business Loans",
       description: "Support small and growing business with funds to restock, expand and manage operations.",
-     
-      
+      features: [], // <-- ADDED
     },
     {
       icon: Car,
       title: "Commercial Drivers Loan",
       description: "Flexible loan designed for taxi, trotro and ride hailing drivers to maintain, repairor purchase vehicles.",
+      features: [], // <-- ADDED
     },
     {
       icon: Building2,
       title: "Asset Financing",
       description: "A structured loan that helps clients acquire essential assests such as vehicles, equipment, appliances or business tools while paying in flexible installments.",
+      features: [], // <-- ADDED
     },
     {
       icon: Users,
       title: "Group Loans",
       description: "Loans offered to groups or associations where members support each other's repayment to access higher amounts with a minimum of five (5) and a maximum of ten (10).",
+      features: [], // <-- ADDED
     },
   ];
 
@@ -59,7 +61,7 @@ const Services = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
+                  {service.features?.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-foreground/80">
                       <span className="w-1.5 h-1.5 bg-secondary rounded-full" />
                       {feature}
