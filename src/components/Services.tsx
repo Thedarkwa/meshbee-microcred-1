@@ -5,27 +5,25 @@ const Services = () => {
   const services = [
     {
       icon: ShoppingBag,
-      title: "Market Women Loans",
-      description: "Boost your trading capital with loans designed for market women. Flexible daily or weekly repayments that match your sales cycle.",
-      features: ["GHS 500 - 10,000", "Daily/Weekly repayment", "No collateral needed"],
+      title: "Business Loans",
+      description: "Support small and growing business with funds to restock, expand and manage operations.",
+     
+      
     },
     {
       icon: Car,
-      title: "Commercial Driver Loans",
-      description: "Keep your taxi running smoothly with quick loans for repairs, fuel, or vehicle upgrades. Same-day approval available.",
-      features: ["GHS 1,000 - 15,000", "Flexible terms", "Quick disbursement"],
+      title: "Commercial Drivers Loan",
+      description: "Flexible loan designed for taxi, trotro and ride hailing drivers to maintain, repairor purchase vehicles.",
     },
     {
       icon: Building2,
-      title: "SME Business Loans",
-      description: "Scale your small or medium business with working capital loans. Perfect for stock, equipment, or expansion.",
-      features: ["GHS 5,000 - 50,000", "Monthly repayment", "Competitive rates"],
+      title: "Asset Financing",
+      description: "A structured loan that helps clients acquire essential assests such as vehicles, equipment, appliances or business tools while paying in flexible installments.",
     },
     {
       icon: Users,
-      title: "Group Lending",
-      description: "Join forces with other entrepreneurs. Lower interest rates and shared responsibility through our community lending program.",
-      features: ["Group of 5-10 members", "Lower interest rates", "Peer support"],
+      title: "Group Loans",
+      description: "Loans offered to groups or associations where members support each other's repayment to access higher amounts with a minimum of five (5) and a maximum of ten (10).",
     },
   ];
 
