@@ -1,4 +1,4 @@
-import { Clock, Shield, Smile, Percent, FileCheck, Headphones, SearchCheck } from "lucide-react";
+import { Clock, Shield, Smile, Percent, FileCheck, Headphones, SearchCheck, Heart, Users, Target, Lightbulb } from "lucide-react";
 
 const WhyUs = () => {
   const benefits = [
@@ -39,6 +39,29 @@ const WhyUs = () => {
     },
   ];
 
+  const coreValues = [
+    {
+      icon: Heart,
+      title: "Integrity",
+      description: "We operate with honesty and transparency in all our dealings.",
+    },
+    {
+      icon: Users,
+      title: "Customer First",
+      description: "Your success is our success. We put your needs at the center of everything we do.",
+    },
+    {
+      icon: Target,
+      title: "Excellence",
+      description: "We strive for the highest standards in service delivery and customer satisfaction.",
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "We continuously improve our processes to serve you better and faster.",
+    },
+  ];
+
   return (
     <section id="why-us" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
@@ -54,7 +77,7 @@ const WhyUs = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
@@ -69,6 +92,33 @@ const WhyUs = () => {
                 <h3 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{benefit.description}</p>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Core Values Section */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Foundation</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+            Our Core Values
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            These principles guide everything we do at Meshbee.
+          </p>
+        </div>
+
+        {/* Core Values Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {coreValues.map((value, index) => (
+            <div 
+              key={index} 
+              className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <value.icon className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
