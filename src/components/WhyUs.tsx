@@ -5,7 +5,7 @@ const WhyUs = () => {
     {
       icon: Clock,
       title: "Fast Approval",
-      description: "Get your loan approved within 24-48 hours. No long waiting times or endless paperwork.",
+      description: "Get your loan approved within 48-72 hours. No long waiting times or endless paperwork.",
     },
     {
       icon: Shield,
@@ -15,7 +15,7 @@ const WhyUs = () => {
     {
       icon: Percent,
       title: "Fair Interest Rates",
-      description: "Competitive rates designed for small businesses. No hidden charges or surprise fees.",
+      description: "Competitive rates designed for small businesses. No hidden charges.",
     },
     {
       icon: Smile,
