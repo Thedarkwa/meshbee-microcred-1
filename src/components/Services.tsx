@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingBag, Car, Building2, Users } from "lucide-react";
+import { ShoppingBag, Car, Building2, Users, User } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -7,25 +7,31 @@ const Services = () => {
       icon: ShoppingBag,
       title: "Business Loans",
       description: "Support small and growing business with funds to restock, expand and manage operations.",
-      features: [], // <-- ADDED
+      features: [],
+    },
+    {
+      icon: User,
+      title: "Personal Loans",
+      description: "Quick and flexible loans for individuals to meet personal financial needs, emergencies, or life goals.",
+      features: [],
     },
     {
       icon: Car,
       title: "Commercial Drivers Loan",
-      description: "Flexible loan designed for taxi, trotro and ride hailing drivers to maintain, repairor purchase vehicles.",
-      features: [], // <-- ADDED
+      description: "Flexible loan designed for taxi, trotro and ride hailing drivers to maintain, repair or purchase vehicles.",
+      features: [],
     },
     {
       icon: Building2,
       title: "Asset Financing",
-      description: "A structured loan that helps clients acquire essential assests such as vehicles, equipment, appliances or business tools while paying in flexible installments.",
-      features: [], // <-- ADDED
+      description: "A structured loan that helps clients acquire essential assets such as vehicles, equipment, appliances or business tools while paying in flexible installments.",
+      features: [],
     },
     {
       icon: Users,
       title: "Group Loans",
       description: "Loans offered to groups or associations where members support each other's repayment to access higher amounts with a minimum of five (5) and a maximum of ten (10).",
-      features: [], // <-- ADDED
+      features: [],
     },
   ];
 
