@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +13,43 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you shortly.",
-    });
-    setFormData({ name: "", phone: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) {
+        console.error("Error sending message:", error);
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log("Message sent successfully:", data);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. We'll get back to you shortly.",
+      });
+      setFormData({ name: "", phone: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -73,6 +103,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
+                    disabled={isSubmitting}
                     className="bg-background"
                   />
                 </div>
@@ -84,6 +115,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
+                    disabled={isSubmitting}
                     className="bg-background"
                   />
                 </div>
@@ -95,6 +127,7 @@ const Contact = () => {
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  disabled={isSubmitting}
                   className="bg-background"
                 />
               </div>
@@ -106,11 +139,12 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
+                  disabled={isSubmitting}
                   className="bg-background resize-none"
                 />
               </div>
-              <Button type="submit" variant="default" size="lg" className="w-full">
-                Send Message
+              <Button type="submit" variant="default" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>
