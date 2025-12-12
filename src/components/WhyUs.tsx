@@ -112,13 +112,27 @@ const WhyUs = () => {
           {coreValues.map((value, index) => (
             <div 
               key={index} 
-              className="text-center p-6 rounded-xl bg-card border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+              className="group relative text-center p-8 rounded-2xl bg-gradient-to-b from-card to-card/90 border border-border hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="w-8 h-8 text-primary" />
+              {/* Background gradient animation */}
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Icon container with ring effect */}
+              <div className="relative z-10">
+                <div className="relative w-20 h-20 mx-auto mb-5">
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/20 group-hover:border-primary/40 group-hover:scale-110 transition-all duration-500" />
+                  {/* Inner circle */}
+                  <div className="absolute inset-2 bg-gradient-to-br from-primary/10 to-primary/5 rounded-full flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                    <value.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary to-secondary group-hover:w-1/2 transition-all duration-500 rounded-full" />
             </div>
           ))}
         </div>

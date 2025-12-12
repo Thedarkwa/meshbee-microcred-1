@@ -89,17 +89,28 @@ const Services = () => {
             {[
               { title: "Loan Amount", description: "GHC 1,000.00-GHC 20,000" },
               { title: "Interest Rate", description: "7% for Weekly and 10% Monthly" },
-              { title: "Processing Fee", description: "5% of approved amount <br>Application fees: GHC 50.00</br>" },
+              { title: "Processing Fee", description: "5% of approved amount. Application fees: GHC 50.00" },
               { title: "Repayment Options", description: "Daily, Weekly, Bi-Weekly and Monthly" },
               { title: "Duration", description: "1-6 months" },
               { title: "Collateral", description: "Based on Risk profile and Loans amount" },
             ].map((feature, index) => (
               <div 
                 key={index}
-                className="bg-card border border-border/50 rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+                className="group relative bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <div className="w-2 h-2 bg-primary rounded-full" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
