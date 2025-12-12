@@ -11,7 +11,7 @@ const MissionVision = () => {
             Mission & Vision
           </h2>
           <p className="text-muted-foreground text-lg">
-            Guiding principles that drive everything we do at Meshbee MicroCredit Enterprise.
+            To enhance the living standards of our clients by providing innovative financing solutions powered by technology
           </p>
         </div>
 
@@ -30,7 +30,7 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To improve the living standards of our clients through professional microcredit services and technology.
+                To improve the living standards of our clients by providing innovative financial solutions powered by technology.
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To become the most reliable and trusted brand for financial solutions within the informal sector.
+                To become the most reliable and trusted brand for financial solutions in Ghana and beyond.
               </p>
             </div>
           </div>
