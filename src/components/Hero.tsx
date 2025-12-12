@@ -38,8 +38,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-card/80 mb-8 leading-relaxed max-w-xl">
-            Get quick, affordable loans tailored for market women, commercial drivers, and SMEs. 
-            We believe in your hustle and are here to support your growth.
+            Get quick, affordable loans tailored to support individuals and businesses across all sectors. We believe in your hustle and are here to support your growth
           </p>
 
           {/* Highlights */}
