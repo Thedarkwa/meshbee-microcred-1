@@ -27,12 +27,6 @@ const Services = () => {
       description: "A structured loan that helps clients acquire essential assets such as vehicles, equipment, appliances or business tools while paying in flexible installments.",
       features: [],
     },
-    {
-      icon: Users,
-      title: "Group Loans",
-      description: "Loans offered to groups or associations where members support each other's repayment to access higher amounts with a minimum of five (5) and a maximum of ten (10).",
-      features: [],
-    },
   ];
 
   return (
