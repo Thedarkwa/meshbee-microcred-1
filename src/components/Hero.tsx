@@ -65,7 +65,7 @@ const Hero = () => {
               className="border-card/50 text-card hover:bg-card hover:text-foreground"
               asChild
             >
-              <Link to="/#about">Learn More</Link>
+              <Link to="/company">Learn More</Link>
             </Button>
           </div>
 
