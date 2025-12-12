@@ -13,9 +13,10 @@ const Footer = () => {
 
   const loanProducts = [
     "Business Loans",
+    "Personal Loans",
     "Commercial Drivers Loan",
-    "Assest Aquisition Loan",
-    "Group Lending",
+    "Asset Financing",
+    "Group Loans",
   ];
 
   return (
