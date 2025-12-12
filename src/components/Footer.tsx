@@ -12,9 +12,9 @@ const Footer = () => {
   ];
 
   const loanProducts = [
-    "Market Women Loans",
-    "Commercial Driver Loans",
-    "SME Business Loans",
+    "Business Loans",
+    "Commercial Drivers Loan",
+    "Assest Aquisition Loan",
     "Group Lending",
   ];
 
