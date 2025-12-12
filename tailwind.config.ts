@@ -94,7 +94,9 @@ export default {
   			xl: 'var(--shadow-xl)',
   			'2xl': 'var(--shadow-2xl)'
   		},
-  		fontFamily: {}
+		fontFamily: {
+			sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
