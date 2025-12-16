@@ -9,6 +9,7 @@ import WhyUs from "@/components/WhyUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PageLoader from "@/components/PageLoader";
+import FloatingCTA from "@/components/FloatingCTA";
 
 type Section = "home" | "about" | "mission-vision" | "services" | "why-us" | "contact";
 
@@ -63,6 +64,7 @@ const Index = () => {
         {renderSection()}
       </div>
       <Footer />
+      <FloatingCTA />
     </main>
   );
 };
