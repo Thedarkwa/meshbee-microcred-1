@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const CompanyOverviewPage = () => {
@@ -321,6 +322,7 @@ const CompanyOverviewPage = () => {
       </main>
 
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
