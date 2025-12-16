@@ -1,16 +1,28 @@
 import { Target, Eye } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const MissionVision = () => {
+  const { ref, isVisible, prefersReducedMotion } = useScrollReveal<HTMLDivElement>();
+
+  const getStaggerStyle = (index: number, baseDelay = 0) =>
+    prefersReducedMotion
+      ? {}
+      : {
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.97)',
+          transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms`,
+        };
+
   return (
     <section className="py-20 bg-primary/5">
-      <div className="container mx-auto px-4">
+      <div ref={ref} className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Purpose</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+          <span style={getStaggerStyle(0)} className="text-primary font-semibold text-sm uppercase tracking-wider inline-block">Our Purpose</span>
+          <h2 style={getStaggerStyle(1)} className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
             Mission & Vision
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p style={getStaggerStyle(2)} className="text-muted-foreground text-lg">
             To enhance the living standards of our clients by providing innovative financing solutions powered by technology
           </p>
         </div>
@@ -18,7 +30,10 @@ const MissionVision = () => {
         {/* Mission & Vision Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Mission Card */}
-          <div className="relative bg-card rounded-2xl p-8 md:p-10 shadow-lg border border-border overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+          <div 
+            style={getStaggerStyle(0, 300)}
+            className="relative bg-card rounded-2xl p-8 md:p-10 shadow-lg border border-border overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+          >
             {/* Decorative Background */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-300" />
             
@@ -36,7 +51,10 @@ const MissionVision = () => {
           </div>
 
           {/* Vision Card */}
-          <div className="relative bg-card rounded-2xl p-8 md:p-10 shadow-lg border border-border overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+          <div 
+            style={getStaggerStyle(1, 300)}
+            className="relative bg-card rounded-2xl p-8 md:p-10 shadow-lg border border-border overflow-hidden group hover:shadow-xl transition-shadow duration-300"
+          >
             {/* Decorative Background */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-300" />
             
