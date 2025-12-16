@@ -1,7 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingBag, Car, Building2, Users, User } from "lucide-react";
+import { ShoppingBag, Car, Building2, User } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Services = () => {
+  const { ref: headerRef, isVisible: headerVisible, prefersReducedMotion } = useScrollReveal<HTMLDivElement>();
+  const { ref: servicesRef, isVisible: servicesVisible } = useScrollReveal<HTMLDivElement>();
+  const { ref: featuresHeaderRef, isVisible: featuresHeaderVisible } = useScrollReveal<HTMLDivElement>();
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollReveal<HTMLDivElement>();
+
   const services = [
     {
       icon: ShoppingBag,
@@ -29,25 +35,44 @@ const Services = () => {
     },
   ];
 
+  const loanFeatures = [
+    { title: "Loan Amount", description: "GHC 1,000.00-GHC 20,000" },
+    { title: "Interest Rate", description: "7% for Weekly and 10% Monthly" },
+    { title: "Processing Fee", description: "5% of approved amount. Application fees: GHC 50.00" },
+    { title: "Repayment Options", description: "Daily, Weekly, Bi-Weekly and Monthly" },
+    { title: "Duration", description: "1-6 months" },
+    { title: "Collateral", description: "Based on Risk profile and Loans amount" },
+  ];
+
+  const getStaggerStyle = (index: number, isVisible: boolean, baseDelay = 0) =>
+    prefersReducedMotion
+      ? {}
+      : {
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.97)',
+          transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms`,
+        };
+
   return (
     <section id="services" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Services</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+        <div ref={headerRef} className="text-center max-w-2xl mx-auto mb-16">
+          <span style={getStaggerStyle(0, headerVisible)} className="text-primary font-semibold text-sm uppercase tracking-wider inline-block">Our Services</span>
+          <h2 style={getStaggerStyle(1, headerVisible)} className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
             Loan Products for Every Hustle
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p style={getStaggerStyle(2, headerVisible)} className="text-muted-foreground text-lg">
             We understand that every business is unique. That's why we offer flexible loan products tailored to your specific needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={servicesRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <Card 
-              key={index} 
+              key={index}
+              style={getStaggerStyle(index, servicesVisible)}
               className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30 bg-card"
             >
               <CardHeader>
@@ -75,27 +100,21 @@ const Services = () => {
 
         {/* Loan Features Section */}
         <div className="mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+          <div ref={featuresHeaderRef} className="text-center max-w-2xl mx-auto mb-12">
+            <span style={getStaggerStyle(0, featuresHeaderVisible)} className="text-secondary font-semibold text-sm uppercase tracking-wider inline-block">What We Offer</span>
+            <h2 style={getStaggerStyle(1, featuresHeaderVisible)} className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
               Loan Features
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p style={getStaggerStyle(2, featuresHeaderVisible)} className="text-muted-foreground text-lg">
               Discover the benefits that make our loans stand out from the rest.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Loan Amount", description: "GHC 1,000.00-GHC 20,000" },
-              { title: "Interest Rate", description: "7% for Weekly and 10% Monthly" },
-              { title: "Processing Fee", description: "5% of approved amount. Application fees: GHC 50.00" },
-              { title: "Repayment Options", description: "Daily, Weekly, Bi-Weekly and Monthly" },
-              { title: "Duration", description: "1-6 months" },
-              { title: "Collateral", description: "Based on Risk profile and Loans amount" },
-            ].map((feature, index) => (
+          <div ref={featuresRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {loanFeatures.map((feature, index) => (
               <div 
                 key={index}
+                style={getStaggerStyle(index, featuresVisible)}
                 className="group relative bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-2xl p-6 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Gradient overlay on hover */}

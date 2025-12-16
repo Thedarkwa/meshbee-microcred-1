@@ -5,8 +5,13 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
+  const { ref: headerRef, isVisible: headerVisible, prefersReducedMotion } = useScrollReveal<HTMLDivElement>();
+  const { ref: formRef, isVisible: formVisible } = useScrollReveal<HTMLDivElement>();
+  const { ref: infoRef, isVisible: infoVisible } = useScrollReveal<HTMLDivElement>();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -75,23 +80,36 @@ const Contact = () => {
     },
   ];
 
+  const getStaggerStyle = (index: number, isVisible: boolean, baseDelay = 0) =>
+    prefersReducedMotion
+      ? {}
+      : {
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.97)',
+          transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + index * 100}ms`,
+        };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+        <div ref={headerRef} className="text-center max-w-2xl mx-auto mb-16">
+          <span style={getStaggerStyle(0, headerVisible)} className="text-primary font-semibold text-sm uppercase tracking-wider inline-block">Get In Touch</span>
+          <h2 style={getStaggerStyle(1, headerVisible)} className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
             Ready to Grow Your Business?
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p style={getStaggerStyle(2, headerVisible)} className="text-muted-foreground text-lg">
             Visit us at our office or send us a message. We're here to answer all your questions.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
+          <div 
+            ref={formRef}
+            style={getStaggerStyle(0, formVisible)}
+            className="bg-card rounded-2xl p-8 shadow-lg border border-border"
+          >
             <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -150,10 +168,11 @@ const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div ref={infoRef} className="space-y-6">
             {contactInfo.map((info, index) => (
               <div 
-                key={index} 
+                key={index}
+                style={getStaggerStyle(index, infoVisible)}
                 className="flex gap-4 p-5 rounded-xl bg-muted/50 border border-border hover:border-primary/30 transition-colors"
               >
                 <div className="shrink-0">
@@ -171,7 +190,10 @@ const Contact = () => {
             ))}
 
             {/* Google Map */}
-            <div className="h-64 rounded-xl border border-border overflow-hidden">
+            <div 
+              style={getStaggerStyle(contactInfo.length, infoVisible)}
+              className="h-64 rounded-xl border border-border overflow-hidden"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.635!2d-0.0714!3d5.5883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTeshie%2C%20Accra%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1699999999999!5m2!1sen!2sgh"
                 width="100%"
