@@ -6,12 +6,13 @@ import About from "@/components/About";
 import MissionVision from "@/components/MissionVision";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PageLoader from "@/components/PageLoader";
 import FloatingCTA from "@/components/FloatingCTA";
 
-type Section = "home" | "about" | "mission-vision" | "services" | "why-us" | "contact";
+type Section = "home" | "about" | "mission-vision" | "services" | "why-us" | "faq" | "contact";
 
 const Index = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const Index = () => {
 
   useEffect(() => {
     const hash = location.hash.replace("#", "") as Section;
-    if (hash && ["home", "about", "mission-vision", "services", "why-us", "contact"].includes(hash)) {
+    if (hash && ["home", "about", "mission-vision", "services", "why-us", "faq", "contact"].includes(hash)) {
       if (hash !== activeSection) {
         setIsLoading(true);
         setTimeout(() => {
@@ -49,6 +50,8 @@ const Index = () => {
         return <Services />;
       case "why-us":
         return <WhyUs />;
+      case "faq":
+        return <FAQ />;
       case "contact":
         return <Contact />;
       default:

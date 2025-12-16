@@ -14,6 +14,7 @@ const Header = () => {
     { name: "Mission & Vision", href: "/#mission-vision" },
     { name: "Services", href: "/#services" },
     { name: "Why Us", href: "/#why-us" },
+    { name: "FAQ", href: "/#faq" },
     { name: "Contact", href: "/#contact" },
   ];
 
