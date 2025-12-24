@@ -34,8 +34,8 @@ const handler = async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Meshbee Contact Form <onboarding@resend.dev>",
-        to: ["info@meshbeemicrocredit.com"], // Replace with your actual email
+        from: "Meshbee Contact Form <contact@meshbeemicrocredit.com>",
+        to: ["info@meshbeemicrocredit.com"],
         subject: `New Contact Form Message from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
