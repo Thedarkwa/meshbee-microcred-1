@@ -4,7 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Contact = () => {
@@ -15,46 +14,38 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
-
-      if (error) {
-        console.error("Error sending message:", error);
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      console.log("Message sent successfully:", data);
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. We'll get back to you shortly.",
-      });
-      setFormData({ name: "", phone: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error:", error);
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) {
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Please fill in all required fields.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
+      return;
     }
+
+    const whatsappNumber = "233506605717";
+    const messageText = `New Contact Message:
+Name: ${formData.name}
+Phone: ${formData.phone}
+Message: ${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    toast({
+      title: "Opening WhatsApp",
+      description: "You will be redirected to WhatsApp to send your message.",
+    });
+
+    setFormData({ name: "", phone: "", message: "" });
   };
 
   const contactInfo = [
@@ -121,7 +112,6 @@ const Contact = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    disabled={isSubmitting}
                     className="bg-background"
                   />
                 </div>
@@ -133,21 +123,9 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
-                    disabled={isSubmitting}
                     className="bg-background"
                   />
                 </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
-                <Input
-                  type="email"
-                  placeholder="you@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  disabled={isSubmitting}
-                  className="bg-background"
-                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">Your Message</label>
@@ -157,12 +135,11 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  disabled={isSubmitting}
                   className="bg-background resize-none"
                 />
               </div>
-              <Button type="submit" variant="default" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send Message"}
+              <Button type="submit" variant="default" size="lg" className="w-full">
+                Send Message
               </Button>
             </form>
           </div>
