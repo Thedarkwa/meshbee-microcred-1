@@ -57,12 +57,12 @@ Message: ${formData.message}`;
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+233 50 066 057 17"],
+      details: ["+233 50 66 057 17"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@meshbeemicrocredit.com", "loans@meshbeemicrocredit.com"],
+      details: ["info@meshbeemicrocredit.com"],
     },
     {
       icon: Clock,
