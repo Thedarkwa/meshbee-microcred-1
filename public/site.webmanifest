@@ -1,0 +1,14 @@
+{
+  "name": "Meshbee MicroCredit Enterprise",
+  "short_name": "Meshbee",
+  "icons": [
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ],
+  "theme_color": "#1a1a2e",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
