@@ -29,7 +29,7 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Ghanaian small business owners smiling"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,45%,10%)]/90 via-[hsl(215,35%,18%)]/65 to-[hsl(30,20%,25%)]/30" />
       </div>
