@@ -31,7 +31,7 @@ const Hero = () => {
           alt="Ghanaian small business owners smiling"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,60%,12%)]/95 via-[hsl(210,50%,15%)]/75 to-[hsl(210,40%,20%)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,45%,10%)]/90 via-[hsl(215,35%,18%)]/65 to-[hsl(30,20%,25%)]/30" />
       </div>
 
       <div ref={ref} className="container mx-auto px-4 relative z-10">
